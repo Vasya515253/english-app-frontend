@@ -1,17 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import Home from './components/Home'
 
-function App() {
-  const [count, setCount] = useState(0)
+const navItems = [
+  { id: 'grammar', title: 'Grammar', subtitle: 'Rules and structure' },
+  { id: 'listening', title: 'Listening', subtitle: 'Audio and understanding' },
+  { id: 'pronunciation', title: 'Pronunciation', subtitle: 'Sounds and clarity' },
+  { id: 'reading', title: 'Reading', subtitle: 'Texts and topics' },
+  { id: 'speaking', title: 'Speaking', subtitle: 'Questions and practice' },
+  { id: 'vocabulary', title: 'Vocabulary', subtitle: 'Words and repetition' },
+  { id: 'writing', title: 'Writing', subtitle: 'Tasks and feedback' },
+] as const
 
+export default function App() {
   return (
-    <>
-      <h1>My app</h1>
-    </>
+    <Home
+      navItems={navItems as any}
+      onSelectSection={() => {}}
+    />
   )
 }
-
-export default App
